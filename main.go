@@ -5,6 +5,7 @@ import (
 	"math/big"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/signer/core/apitypes"
@@ -35,8 +36,8 @@ func main() {
 			VerifyingContract: "0x4De1bCf2B7E851E31216fC07989caA902A604784",
 		},
 		Message: apitypes.TypedDataMessage{
-			"integrationNode": big.NewInt(1),
-			"vehicleNode":     big.NewInt(57),
+			"integrationNode": hexutil.EncodeBig(big.NewInt(1)),
+			"vehicleNode":     hexutil.EncodeBig(big.NewInt(57)),
 		},
 	}
 
